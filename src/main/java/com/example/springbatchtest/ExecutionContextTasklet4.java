@@ -19,6 +19,7 @@ public class ExecutionContextTasklet4 implements Tasklet {
 		ExecutionContext jobExecutionContext = chunkContext.getStepContext().getStepExecution().getJobExecution().getExecutionContext();
 
 		System.out.println("name : " + jobExecutionContext.get("name"));
+		System.out.println("jobName : " + jobExecutionContext.get("jobName"));
 		return RepeatStatus.FINISHED;
 	}
 }
