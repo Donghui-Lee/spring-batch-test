@@ -25,7 +25,7 @@ public class ExecutionContextTasklet3 implements Tasklet {
 		if (name == null) {
 			jobExecutionContext.put("name", "user1");
 			// 예외 발생 시킴
-			throw new RuntimeException("Step3 was failed");
+//			throw new RuntimeException("Step3 was failed");
 		}
 		return RepeatStatus.FINISHED;
 	}
