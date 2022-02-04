@@ -18,12 +18,14 @@ import lombok.RequiredArgsConstructor;
 public class JobRepositoryConfiguration {
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
+    private final JobRepositoryListener jobRepositoryListener;
 
     @Bean
     public Job BatchJob() {
         return this.jobBuilderFactory.get("Job")
                                      .start(step1())
                                      .next(step2())
+                                     .listener(jobRepositoryListener)
                                      .build();
     }
 
